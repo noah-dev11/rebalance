@@ -1,0 +1,34 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
+import APPSTOREimg from '@assets/App_Store_(iOS)-Logo.wine.svg'
+import PlayStoreLogo from '@assets/Google_Play_Services-Logo.wine.svg'
+import IOSICON from '@assets/IOS-Logo.wine.svg'
+---
+
+<div class="mt-24">
+  <h2 class="text-center text-slate-500">Works with your Android or Apple Phone</h2>
+  <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
+  <Picture
+  src={APPSTOREimg}
+  class="size-8 md:size-16"
+  alt="APP STORE LOGO"
+ />
+ <Picture
+ src={PlayStoreLogo}
+ class="size-8 md:size-16"
+ alt="APP STORE LOGO"
+/>
+<Picture
+src={APPSTOREimg}
+class="size-8 md:size-16"
+alt="APP STORE LOGO"
+/>
+<Picture
+src={PlayStoreLogo}
+class="size-8 md:size-16"
+alt="APP STORE LOGO"
+/>
+  </div>
+</div>

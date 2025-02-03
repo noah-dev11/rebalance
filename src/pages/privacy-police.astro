@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<Layout title="Privacy Policy">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Privacy Policy</Fragment>
+      <Fragment slot="desc">
+        Effective Date: 01/28/2025 Owner: AllSmart Inc.</Fragment
+      >
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">Privacy Policy</h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        AllSmart Inc. ("we," "us," or "our") values your privacy and is
+        committed to protecting your personal information. By using the
+        Rebalance APP ("App"), you agree to the collection and use of
+        information as described in this Privacy Policy.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        1. No Financial Advice & No Liability The App is provided for
+        informational and portfolio management purposes only. It does not
+        provide financial, investment, or trading advice. You are solely
+        responsible for your investment decisions, and AllSmart Inc. is not
+        liable for any losses incurred due to market volatility, incorrect
+        configurations, or actions taken based on information within the App.
+        AllSmart Inc. is not responsible for any errors, delays, or failures in
+        executing trades, as all transactions are performed through third-party
+        brokerages. Users should verify all trade details before execution.
+        Additionally, users should always verify the recommended rebalance
+        operations and total order values with their corresponding brokerage
+        system. Market volatility and prices will ultimately be executed and
+        finalized by the brokerage and its processing mechanisms.
+      </p>
+    </div>
+  </Container>
+</Layout>
